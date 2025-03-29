@@ -61,7 +61,7 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
 
   useEffect(()=>{
     if(callStatus === CallStatus.FINISHED) router.push('/')
-  },[messages, callStatus, type, userId]);
+  },[messages, callStatus, router, type, userId]);
 
   const handleCall = async () => {
     setCallStatus(CallStatus.CONNECTING);
@@ -115,13 +115,13 @@ const Agent = ({ userName, userId, type }: AgentProps) => {
 
     <div className="w-full flex justify-center">
         {callStatus !== 'ACTIVE' ? (
-            <button className='relative btn-call' onClick={handleCall}>
+            <button className='relative btn-call' onClick={()=> handleCall()}>
                 <span className={cn('absolute animate-ping rounded-full opacity-75', callStatus !== 'CONNECTING' && 'hidden')}/>
 
-                <span>{isCallInactiveOrFinished ? 'Call' : '. . .'}</span>
+                <span className='relative'>{isCallInactiveOrFinished ? 'Call' : '. . .'}</span>
             </button>
         ): (
-            <button className="btn-disconnect" onClick={handleDisconnect}>
+            <button className="btn-disconnect" onClick={()=> handleDisconnect()}>
                 End
             </button>
         )}

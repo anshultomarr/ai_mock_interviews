@@ -50,7 +50,7 @@ const InterviewCard = ({interviewId, userId, role, type, techstack, createdAt}: 
                 </Button>
             </div>
         </div>
-        InterviewCard</div>
+    </div>
   )
 }
 
