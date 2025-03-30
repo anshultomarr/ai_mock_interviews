@@ -22,7 +22,7 @@ const InterviewCard = async ({id, userId, role, type, techstack, createdAt}: Int
 
                 <Image src={getRandomInterviewCover()} alt='cover image' width={90} height={90} className='rounded-full object-fit size-[90px]'/>
 
-                <h3 className='mt-5 capitalize'>{role}interview</h3>
+                <h3 className='mt-5 capitalize'>{role} interview</h3>
 
                 <div className='flex flex-row gap-5 mt-3'>
                     <div className='flex flex-row gap-2'>
